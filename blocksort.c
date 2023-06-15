@@ -1051,7 +1051,7 @@ void BZ2_blockSort ( EState* s )
       */
       i = nblock+BZ_N_OVERSHOOT;
       if (i & 1) i++;
-      quadrant = (UInt16*)(&(block[i]));
+      quadrant = (UInt16*) (void*) (&(block[i]));
 
       /* (wfact-1) / 3 puts the default-factor-30
          transition point at very roughly the same place as
