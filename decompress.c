@@ -308,7 +308,7 @@ Int32 BZ2_decompress ( DState* s )
       /*--- Undo the MTF values for the selectors. ---*/
       {
          UChar pos[BZ_N_GROUPS], tmp, v;
-         for (v = 0; v < nGroups; v++) pos[v] = v;
+         for (i = 0; i < nGroups; i++) pos[i] = (UChar) i;
 
          for (i = 0; i < nSelectors; i++) {
             v = s->selectorMtf[i];
