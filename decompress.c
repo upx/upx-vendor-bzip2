@@ -21,6 +21,13 @@
 
 #include "bzlib_private.h"
 
+/* clang >= 3.0 or gcc >= 4.4 */
+#if defined(__clang__) && (__clang_major__ >= 3)
+#pragma clang diagnostic ignored "-Wimplicit-fallthrough"
+#elif defined(__GNUC__) && (__GNUC__ >= 5 || (__GNUC__ == 4 && __GNUC_MINOR__ >= 4))
+#pragma GCC diagnostic ignored "-Wimplicit-fallthrough"
+#endif
+
 
 /*---------------------------------------------------*/
 static
