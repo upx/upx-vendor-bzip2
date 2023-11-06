@@ -440,6 +440,7 @@ void sendMTFValues ( EState* s )
             VPrintf1 ( "%d ", fave[t] );
          VPrintf0 ( "\n" );
       }
+      (void) totc; /* maybe_unused when using BZ_NO_STDIO */
 
       /*--
         Recompute the tables based on the accumulated frequencies.
@@ -512,6 +513,7 @@ void sendMTFValues ( EState* s )
 
       if (s->verbosity >= 3)
          VPrintf1( "      bytes: mapping %d, ", s->numZ-nBytes );
+      (void) nBytes; /* maybe_unused when using BZ_NO_STDIO */
    }
 
    /*--- Now the selectors. ---*/
@@ -524,6 +526,7 @@ void sendMTFValues ( EState* s )
    }
    if (s->verbosity >= 3)
       VPrintf1( "selectors %d, ", s->numZ-nBytes );
+   (void) nBytes; /* maybe_unused when using BZ_NO_STDIO */
 
    /*--- Now the coding tables. ---*/
    nBytes = s->numZ;
@@ -540,6 +543,7 @@ void sendMTFValues ( EState* s )
 
    if (s->verbosity >= 3)
       VPrintf1 ( "code lengths %d, ", s->numZ-nBytes );
+   (void) nBytes; /* maybe_unused when using BZ_NO_STDIO */
 
    /*--- And finally, the block data proper ---*/
    nBytes = s->numZ;
@@ -594,6 +598,7 @@ void sendMTFValues ( EState* s )
 
    if (s->verbosity >= 3)
       VPrintf1( "codes %d\n", s->numZ-nBytes );
+   (void) nBytes; /* maybe_unused when using BZ_NO_STDIO */
 }
 
 

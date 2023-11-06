@@ -1008,6 +1008,7 @@ void mainSort ( UInt32* ptr,
    if (verb >= 4)
       VPrintf3 ( "        %d pointers, %d sorted, %d scanned\n",
                  nblock, numQSorted, nblock - numQSorted );
+   (void) numQSorted; /* maybe_unused when using BZ_NO_STDIO */
 }
 
 #undef BIGFREQ
